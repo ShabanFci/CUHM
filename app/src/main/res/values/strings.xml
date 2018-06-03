@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">CUHM</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_app_setting">App Setting</string>
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="emergency">Emergency</string>
+    <string name="request_help">Request Help</string>
+    <string-array name="problemCategories">
+        <item>Choose a problem…</item>
+        <item>Accident</item>
+        <item>Fire</item>
+        <item>Traffic</item>
+        <item>Technical Engine</item>
+    </string-array>
+
+    <!--ContactUs Fragment -->
+    <string name="user_name_hint"> Name</string>
+    <string name="user_name_email"> E-mail</string>
+    <string name="user_name_message">Enter your message</string>
+    <string name="send">Send</string>
+    <string name="reset">Reset</string>
+
+    <string name="user_email_label">Email</string>
+    <string name="user_phone_label">Phone</string>
+    <string name="user_address_label">Address</string>
+    <string name="user_job_label">Job</string>
+
+    <!--login strings -->
+    <string name="hint_dob">Enter Age</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="btn_sign_up">Register !!</string>
+    <string name="err_msg_name">Please enter a Name</string>
+    <string name="err_msg_required">Valid Input Required</string>
+    <string name="err_msg_email">Please enter a Valid Email</string>
+    <string name="err_msg_password">Enter a Password</string>
+    <string name="err_msg_dob">Enter a valid D.O.B</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_link_signup">Register</string>
+    <string name="btn_link_login">Already have an account Login !!</string>
+    <string name="Fname">First Name</string>
+    <string name="Lname">Last Name</string>
+    <string name="hint_Confpassword">Conferm Password</string>
+    <string name="hint_Address">Address</string>
+    <string name="show_email_in_navigation">mono@gmail.com</string>
+    <string name="username_in_navigation">MONO</string>
+    <string name="email">Email</string>
+
+
+    <!--Quick Help Buttons-->
+
+    <string name="button_1QHelp">Ambulance</string>
+    <string name="button_2QHelp">Fire</string>
+    <string name="button_3QHelp">Police</string>
+    <string name="button_4QHelp">APP Support</string>
+    <string name="button_5QHelp">Button 5</string>
+    <string name="button_6QHelp">Button 6</string>
+
+    <string name="write_descriptionContactUs">Write Description</string>
+    <string name="about_us">About Us</string>
+    <string name="app_settings">App Settings</string>
+    <string name="blank_fragment">Blank Fragment</string>
+    <string name="contact_list">Contact List</string>
+    <string name="notification">Notification</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="terms_and_policies">Terms And Policies</string>
+    <string name="enter_your_e_mail">Enter Your E-mail</string>
+    <string name="could_you_help_me">Could You Help Me..!?</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="users_name">User Name</string>
+    <string name="users_status">Job</string>
+    <string name="problem">Problem</string>
+    <string name="update_image">Update Image</string>
+    <string name="user_name">User Name</string>
+    <string name="e_mail">E-mail</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="job">Job</string>
+    <string name="save_changes">Save Changes</string>
+
+
+</resources>
