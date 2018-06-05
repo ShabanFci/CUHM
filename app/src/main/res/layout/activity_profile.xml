@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.fci.steps.cuhm.ProfileActivity">
-
-    <include
-        android:id="@+id/connection_profile_toolbar"
-        layout="@layout/app_bar_layout" />
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/backgroungimg"
+        android:scaleType="fitXY"
+        android:contentDescription="profileimage"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignEnd="@+id/display_profile_status"
-        android:layout_below="@+id/connection_profile_toolbar"
-        android:layout_marginTop="32dp"
-        android:contentDescription="profileimage"
-        app:srcCompat="@drawable/man" />
+        android:id="@+id/pro"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_above="@+id/display_profile_status"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:src="@drawable/profileboy" />
 
     <TextView
         android:id="@+id/display_profile_name"
