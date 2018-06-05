@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.StepsGroupFCI.cuhm.MainActivity"
+    tools:context="com.fci.steps.cuhm.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
 </RelativeLayout>

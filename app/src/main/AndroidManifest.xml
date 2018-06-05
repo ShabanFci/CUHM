@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.StepsGroupFCI.cuhm">
+    package="com.fci.steps.cuhm">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,33 +18,32 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.StepsGroupFCI.cuhm.MainActivity"
+            android:name="com.fci.steps.cuhm.MainActivity"
             android:configChanges="screenSize|orientation"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.StepsGroupFCI.cuhm.EditProfileActivity"
+            android:name=".EditprofileActivity"
             android:label="Edit Profile"
-            android:parentActivityName="com.example.StepsGroupFCI.cuhm.RegisterActivity" />
+            android:parentActivityName="com.fci.steps.cuhm.RegisterActivity" />
         <activity
-            android:name="com.example.StepsGroupFCI.cuhm.LoginActivity"
+            android:name="com.fci.steps.cuhm.LoginActivity"
             android:configChanges="screenSize|orientation"></activity>
         <activity
-            android:name="com.example.StepsGroupFCI.cuhm.RegisterActivity"
+            android:name="com.fci.steps.cuhm.RegisterActivity"
             android:configChanges="screenSize|orientation"
-            android:parentActivityName="com.example.StepsGroupFCI.cuhm.LoginActivity" />
+            android:parentActivityName="com.fci.steps.cuhm.LoginActivity" />
         <activity
-            android:name="com.example.StepsGroupFCI.cuhm.ForgetPasswordActivity"
+            android:name="com.fci.steps.cuhm.ForgetPasswordActivity"
             android:label="Forget Password"
-            android:parentActivityName="com.example.StepsGroupFCI.cuhm.LoginActivity" />
+            android:parentActivityName="com.fci.steps.cuhm.LoginActivity" />
         <activity
-            android:name="com.example.StepsGroupFCI.cuhm.ProfileActivity"
-            android:parentActivityName="com.example.StepsGroupFCI.cuhm.MainActivity"/>
-        <activity android:name="com.example.StepsGroupFCI.cuhm.TrackerActivity" />
-        <activity android:name="com.example.StepsGroupFCI.cuhm.MapsActivity" />
-        <activity android:name="com.example.StepsGroupFCI.cuhm.NearbyHelperMapActivity" />
-        <activity android:name="com.example.StepsGroupFCI.cuhm.RequestRouteActivity" />
-        <activity android:name="com.example.StepsGroupFCI.cuhm.SplashActivity">
+            android:name="com.fci.steps.cuhm.ProfileActivity"
+            android:parentActivityName="com.fci.steps.cuhm.MainActivity"/>
+        <activity android:name="com.fci.steps.cuhm.TrackerActivity" />
+        <activity android:name="com.fci.steps.cuhm.MapsActivity" />
+        <activity android:name="com.fci.steps.cuhm.RequestRouteActivity" />
+        <activity android:name="com.fci.steps.cuhm.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,21 +52,35 @@
         </activity>
 
         <service
-            android:name="com.example.StepsGroupFCI.cuhm.TrackerService"
+            android:name="com.fci.steps.cuhm.TrackerService"
             android:enabled="true"
             android:exported="true" />
-        <service android:name="com.example.StepsGroupFCI.cuhm.MyFirebaseInstanceIdService">
+        <service android:name="com.fci.steps.cuhm.MyFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <service android:name="com.example.StepsGroupFCI.cuhm.MyFirebaseMessagingService">
+        <service android:name="com.fci.steps.cuhm.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name="com.example.StepsGroupFCI.cuhm.ActivitySendPushNotification"></activity>
+        <activity android:name="com.fci.steps.cuhm.ActivitySendPushNotification"></activity>
+
+        <activity
+            android:name=".NearByHelperMapActivity"/>
+        <activity
+            android:name=".RequesterRouteActivity" />
+        <activity
+            android:name=".LocationMonitoringActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <service android:name=".LocationMonitoringService" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
     </application>
 
 </manifest>
