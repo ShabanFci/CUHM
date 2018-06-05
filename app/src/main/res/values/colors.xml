@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2f6699</color>
-    <color name="colorPrimaryDark">#1c4266</color>
-    <color name="colorAccent">#FFFF4081</color>
+    <color name="colorPrimary">#3D3935</color>
+    <color name="colorPrimaryDark">#3D3935</color>
+    <color name="colorAccent">#B07D4A</color>
     <color name="white">#ffffff</color>
-    <color name="edittextunderline">#FFFF4081</color>
-    <color name ="login_button_background">#FFFF4081</color>
+    <color name="edittextunderline">#B07D4A</color>
+    <color name ="login_button_background">#B07D4A</color>
     <color name ="bg_login">#FAF9F7</color>
     <color name="bg_register">#2e3237</color>
     <color name="bg_main">#428bca</color>
