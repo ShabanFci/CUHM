@@ -25,9 +25,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-public class NearByHelperMapActivity extends FragmentActivity implements OnMapReadyCallback {
+public class NearbyHelperMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private static final String TAG = NearByHelperMapActivity.class.getSimpleName();
+    private static final String TAG = NearbyHelperMapActivity.class.getSimpleName();
     private HashMap<String, Marker> mMarkers = new HashMap<>();
     private GoogleMap mMap;
     FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();

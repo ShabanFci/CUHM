@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 
 public class ProfileActivity extends AppCompatActivity {
 
-   // private Toolbar mToolbar;
+    // private Toolbar mToolbar;
 
     private TextView mDisplayProfileName, mDisplayProfileStatus, mDisplayProfileFriend;
     private ImageView mDisplayProfileImage ,mDisplayProfileImageBG;
@@ -37,7 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
         //mToolbar = (Toolbar) findViewById(R.id.connection_profile_toolbar);
         //setSupportActionBar(mToolbar);
 //        getSupportActionBar().setTitle("Connection Profile");
-  //      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final String userId = getIntent().getStringExtra("userId");
 

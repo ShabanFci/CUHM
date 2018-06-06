@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fci.steps.cuhm.EditprofileActivity">
+    tools:context="com.fci.steps.cuhm.EditProfileActivity">
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"

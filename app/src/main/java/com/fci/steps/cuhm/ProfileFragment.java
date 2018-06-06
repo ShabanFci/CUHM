@@ -18,6 +18,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 /**
@@ -34,6 +37,7 @@ public class ProfileFragment extends Fragment {
             ,userPhone
             ,userAddress
             ,userJob;
+    CircleImageView mImageView;
 
 
     public ProfileFragment() {
@@ -45,9 +49,9 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-       BtnEditProfile = view.findViewById(R.id.editProf);
+        BtnEditProfile = view.findViewById(R.id.editProf);
 
 //        user_image = view.findViewById(R.id.UserImage);
         userName = view.findViewById(R.id.fname);
@@ -57,6 +61,7 @@ public class ProfileFragment extends Fragment {
         userEmail = view.findViewById(R.id.user_email);
         userPhone = view.findViewById(R.id.user_phone);
         userJob = view.findViewById(R.id.user_job);
+        mImageView = view.findViewById(R.id.UserImage);
 
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();//Auth
         String userId = mCurrentUser.getUid();
@@ -81,11 +86,11 @@ public class ProfileFragment extends Fragment {
                 userJob.setText(job);
                 userPhone.setText(phone);
 
-//                Picasso.with(SettingActivity.this).load(image).placeholder(R.drawable.ic_launcher_foreground).into(mProfileImage);
-//                if (!image.equals("default")) {
-////                    Picasso.with(SettingActivity.this).load(image).into(mProfileImage);
-//                    Picasso.with(SettingActivity.this).load(image).placeholder(R.mipmap.ic_launcher_round).into(mProfileImage);
-//                }
+                Picasso.with(getActivity()).load(image).placeholder(R.drawable.ic_launcher_foreground).into(mImageView);
+                if (!image.equals("default")) {
+//                    Picasso.with(SettingActivity.this).load(image).into(mProfileImage);
+                    Picasso.with(getActivity()).load(image).placeholder(R.mipmap.ic_launcher_round).into(mImageView);
+                }
             }
 
             @Override
@@ -95,7 +100,7 @@ public class ProfileFragment extends Fragment {
         BtnEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getContext(),EditprofileActivity.class);
+                Intent intent = new Intent(getContext(), EditProfileActivity.class);
 //                intent.putExtra("UserFName",userFName.getText().toString());
                 intent.putExtra("UserName",userName.getText().toString());
                 intent.putExtra("UserLName",userLName.getText().toString());
@@ -111,7 +116,7 @@ public class ProfileFragment extends Fragment {
         btnNear_by_helper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(getContext()  , NearByHelperMapActivity.class);
+                Intent intent = new Intent(getContext(), NearbyHelperMapActivity.class);
                 startActivity(intent);
             }
         });
@@ -124,8 +129,6 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-
 
         return view;
     }
