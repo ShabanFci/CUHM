@@ -80,7 +80,7 @@ public class ProfileFragment extends Fragment {
                 String thumb_image = dataSnapshot.child("thumb_image").getValue().toString();
 
                 userName.setText(fname);
-                userLName.setText(lname);
+                userLName.setText(" "+lname);
                 userAddress.setText(address);
                 userEmail.setText(email);
                 userJob.setText(job);
