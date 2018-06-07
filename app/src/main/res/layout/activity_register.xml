@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/Fname" />
+                    android:hint="@string/register_Act_Fname" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -48,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/Lname" />
+                    android:hint="@string/register_Act_Lname" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -62,7 +62,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/email"
+                    android:hint="@string/register_Act_hint_email"
                     android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
 
@@ -77,7 +77,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/hint_password"
+                    android:hint="@string/register_Act_hint_password"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
@@ -92,7 +92,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/hint_Confpassword"
+                    android:hint="@string/register_Act_hint_password"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
@@ -107,7 +107,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/job" />
+                    android:hint="@string/register_Act_hint_job" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -121,7 +121,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/phone"
+                    android:hint="@string/register_Act_hint_phone"
                     android:inputType="number" />
             </android.support.design.widget.TextInputLayout>
 
@@ -136,7 +136,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="@string/hint_Address" />
+                    android:hint="@string/register_Act_hint_Address" />
             </android.support.design.widget.TextInputLayout>
 
             <RelativeLayout
@@ -148,8 +148,8 @@
                     android:id="@+id/gender_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@string/hint_password"
-                    android:text="@string/hint_gender"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/register_Act_gender"
                     android:textSize="20sp" />
 
                 <RadioGroup
@@ -164,13 +164,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="@string/male" />
+                        android:text="@string/register_Act_male" />
 
                     <RadioButton
                         android:id="@+id/female_radio_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/female" />
+                        android:text="@string/register_Act_female" />
                 </RadioGroup>
             </RelativeLayout>
 
@@ -180,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/buttonblue"
-                android:text="@string/btn_sign_up"
+                android:text="@string/register_Act_btn_sign_up"
                 android:textColor="@android:color/white" />
 
             <Button
@@ -190,7 +190,7 @@
                 android:layout_marginTop="3dp"
                 android:background="@null"
                 android:onClick="LogIn_Link"
-                android:text="@string/btn_link_login"
+                android:text="@string/register_Act_btn_link_login"
                 android:textColor="@android:color/holo_orange_dark" />
         </LinearLayout>
     </LinearLayout>

@@ -27,7 +27,7 @@
             android:layout_above="@+id/users_status"
             android:layout_marginBottom="10dp"
             android:layout_toRightOf="@id/users_profile"
-            android:text="@string/users_name"
+            android:text="@string/users_layout_users_name"
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -38,6 +38,6 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/users_profile"
             android:layout_alignStart="@+id/users_name"
-            android:text="@string/users_status" />
+            android:text="@string/users_layout_users_status" />
     </RelativeLayout>
 </android.support.v7.widget.CardView>

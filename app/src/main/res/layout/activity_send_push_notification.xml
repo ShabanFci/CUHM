@@ -17,13 +17,13 @@
             android:id="@+id/radioButtonSendAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Send to All" />
+            android:text="@string/send_notification_Act_Send_to_all" />
 
         <RadioButton
             android:id="@+id/radioButtonSendOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Send to One" />
+            android:text="@string/send_notification_Act_Send_to_one" />
 
     </RadioGroup>
 
@@ -36,24 +36,24 @@
         android:id="@+id/editTextTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Message Title" />
+        android:hint="@string/send_notification_Act_hint_message_title" />
 
     <EditText
         android:id="@+id/editTextMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Message" />
+        android:hint="@string/send_notification_Act_hint_message" />
 
     <EditText
         android:id="@+id/editTextImageUrl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Image URL (Optional) " />
+        android:hint="@string/send_notification_Act_hint_image_URL" />
 
     <Button
         android:id="@+id/buttonSendPush"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Push" />
+        android:text="@string/send_notification_Act_btn_send" />
 
 </LinearLayout>

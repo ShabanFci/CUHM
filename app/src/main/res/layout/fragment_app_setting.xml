@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/app_settings"
+        android:text="@string/app_setting_frag_app_settings"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </FrameLayout>

@@ -12,7 +12,7 @@
         android:layout_height="140dp"
         android:layout_gravity="center"
         android:background="@drawable/redoval"
-        android:text="@string/emergency"
+        android:text="@string/home_frag_emergency"
         android:textColor="@android:color/white" />
 
     <Button
@@ -22,7 +22,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
         android:background="@drawable/oval"
-        android:text="@string/request_help" />
+        android:text="@string/home_frag_request_help" />
 
 
 
@@ -32,6 +32,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonRegister"
         android:layout_centerHorizontal="true"
-        android:text="Send Notification" />
+        android:text="@string/home_frag_send_notification" />
 
 </LinearLayout>

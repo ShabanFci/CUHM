@@ -9,7 +9,7 @@
         android:id="@+id/spinCategory"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:entries="@array/problemCategories" />
+        android:entries="@array/reqHelp_Act_problemCategories" />
 
     <EditText
         android:id="@+id/problem_description"
@@ -18,7 +18,7 @@
         android:layout_marginTop="60dp"
         android:layout_weight="0.2"
         android:ems="10"
-        android:hint="@string/write_descriptionContactUs"
+        android:hint="@string/reqHelp_Act_write_desc"
         android:inputType="textMultiLine" />
 
 </LinearLayout>

@@ -6,15 +6,15 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_black_24dp"
-            android:title="Home" />
+            android:title="@string/menu_main_drower_group1_home" />
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_account_circle_black_24dp"
-            android:title="Profile" />
+            android:title="@string/menu_main_drower_group1_profile" />
         <item
             android:id="@+id/nav_contactList"
             android:icon="@drawable/ic_people_black_24dp"
-            android:title="Contact List" />
+            android:title="@string/menu_main_drower_group1_contact_list" />
     </group>
 
     <item android:title="Help &amp; Setting">
@@ -24,27 +24,27 @@
                 <item
                     android:id="@+id/nav_AppSetting"
                     android:icon="@drawable/ic_settings_applications_black_24dp"
-                    android:title="App Settings" />
+                    android:title="@string/menu_main_drower_group2_appSetting" />
                 <item
                     android:id="@+id/nav_notifSetting"
                     android:icon="@drawable/ic_notifications_none_black_24dp"
-                    android:title="Notification Setting" />
+                    android:title="@string/menu_main_drower_group2_notificatio_setting" />
                 <item
                     android:id="@+id/nav_Termspolicies"
                     android:icon="@drawable/ic_warning_black_24dp"
-                    android:title="Terms &amp; Policies" />
+                    android:title="@string/menu_main_drower_group2_terms_policies" />
                 <item
                     android:id="@+id/nav_contactUs"
                     android:icon="@drawable/ic_contact_mail_black_24dp"
-                    android:title="Contact Us" />
+                    android:title="@string/menu_main_drower_group2_contactUs" />
                 <item
                     android:id="@+id/nav_about"
                     android:icon="@drawable/ic_info_black_24dp"
-                    android:title="About" />
+                    android:title="@string/menu_main_drower_group2_about" />
                 <item
                     android:id="@+id/nav_LogOut"
                     android:icon="@drawable/ic_menu_send"
-                    android:title="Log Out" />
+                    android:title="@string/menu_main_drower_group2_LogOut" />
             </group>
         </menu>
     </item>

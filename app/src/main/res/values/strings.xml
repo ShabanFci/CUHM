@@ -4,10 +4,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="title_activity_app_setting">App Setting</string>
 
     <!-- Example General settings -->
@@ -78,22 +78,8 @@
     <string name="pref_title_ringtone">Ringtone</string>
     <string name="pref_ringtone_silent">Silent</string>
 
-    <string name="emergency">Emergency</string>
-    <string name="request_help">Request Help</string>
-    <string-array name="problemCategories">
-        <item>Choose a problem…</item>
-        <item>Accident</item>
-        <item>Fire</item>
-        <item>Traffic</item>
-        <item>Technical Engine</item>
-    </string-array>
-
     <!--ContactUs Fragment -->
-    <string name="user_name_hint"> Name</string>
-    <string name="user_name_email"> E-mail</string>
-    <string name="user_name_message">Enter your message</string>
-    <string name="send">Send</string>
-    <string name="reset">Reset</string>
+
 
     <string name="user_email_label">Email</string>
     <string name="user_phone_label">Phone</string>
@@ -102,59 +88,41 @@
 
     <!--login strings -->
     <string name="hint_dob">Enter Age</string>
-    <string name="hint_password">Password</string>
-    <string name="hint_email">Email</string>
-    <string name="hint_gender">Gender</string>
-    <string name="male">Male</string>
-    <string name="female">Female</string>
-    <string name="btn_sign_up">Register !!</string>
+
+
+
     <string name="err_msg_name">Please enter a Name</string>
     <string name="err_msg_required">Valid Input Required</string>
     <string name="err_msg_email">Please enter a Valid Email</string>
     <string name="err_msg_password">Enter a Password</string>
     <string name="err_msg_dob">Enter a valid D.O.B</string>
-    <string name="btn_login">Login</string>
+
     <string name="btn_link_signup">Register</string>
-    <string name="btn_link_login">Already have an account Login !!</string>
-    <string name="Fname">First Name</string>
-    <string name="Lname">Last Name</string>
-    <string name="hint_Confpassword">Conferm Password</string>
-    <string name="hint_Address">Address</string>
+
+
+
+
     <string name="show_email_in_navigation">mono@gmail.com</string>
     <string name="username_in_navigation">MONO</string>
-    <string name="email">Email</string>
+
 
 
     <!--Quick Help Buttons-->
 
-    <string name="button_1QHelp">Ambulance</string>
-    <string name="button_2QHelp">Fire</string>
-    <string name="button_3QHelp">Police</string>
-    <string name="button_4QHelp">APP Support</string>
-    <string name="button_5QHelp">Button 5</string>
-    <string name="button_6QHelp">Button 6</string>
 
-    <string name="write_descriptionContactUs">Write Description</string>
-    <string name="about_us">About Us</string>
-    <string name="app_settings">App Settings</string>
     <string name="blank_fragment">Blank Fragment</string>
     <string name="contact_list">Contact List</string>
     <string name="notification">Notification</string>
-    <string name="notification_settings">Notification Settings</string>
-    <string name="terms_and_policies">Terms And Policies</string>
-    <string name="enter_your_e_mail">Enter Your E-mail</string>
+
     <string name="could_you_help_me">Could You Help Me..!?</string>
     <string name="register">Register</string>
     <string name="login">Login</string>
-    <string name="users_name">User Name</string>
-    <string name="users_status">Job</string>
-    <string name="problem">Problem</string>
+
     <string name="update_image">Update Image</string>
     <string name="user_name">User Name</string>
     <string name="e_mail">E-mail</string>
-    <string name="phone">Phone</string>
     <string name="address">Address</string>
-    <string name="job">Job</string>
+
     <string name="save_changes">Save Changes</string>
 
 
@@ -173,4 +141,170 @@
 
 
 
+
+    <!-- menus  -->
+
+    <!-- menu_activity_main_drower-->
+    <string name="menu_main_drower_group1_home">Home</string>
+    <string name="menu_main_drower_group1_profile">Profile</string>
+    <string name="menu_main_drower_group1_contact_list">Contact List</string>
+
+    <string name="menu_main_drower_group2_appSetting">App Settings</string>
+    <string name="menu_main_drower_group2_notificatio_setting">Notification Setting</string>
+    <string name="menu_main_drower_group2_terms_policies">Terms &amp; Policies</string>
+    <string name="menu_main_drower_group2_contactUs">Contact Us</string>
+    <string name="menu_main_drower_group2_about">About</string>
+    <string name="menu_main_drower_group2_LogOut">Log Out</string>
+    <!-- end menu_activity_main_drower-->
+
+    <!-- menu_main-->
+    <string name="menu_main_action_profile">Profile</string>
+    <string name="menu_main_app_setting">Settings</string>
+    <string name="menu_main_btnsignout">SignOut</string>
+    <!-- end menu_main-->
+    <!-- end menus  -->
+
+
+    <!-- Activities  -->
+    <!-- activity_edit_provile-->
+    <string name="edit_provile_Act_update_image">update_image</string>
+    <string name="edit_provile_Act_first_name">First Name</string>
+    <string name="edit_provile_Act_last_name">Last Name</string>
+    <string name="edit_provile_Act_email">Email</string>
+    <string name="edit_provile_Act_phone">Phone</string>
+    <string name="edit_provile_Act_address">Address</string>
+    <string name="edit_provile_Act_job">Job</string>
+    <string name="edit_provile_Act_save_changes">save_changes</string>
+    <!-- end  activity_edit_provile-->
+
+    <!-- activity_forget_password-->
+    <string name="forget_password_Act_email">Enter Your E-mail</string>
+    <string name="forget_password_Act_send">Send</string>
+    <!-- end activity_forget_password-->
+
+    <!-- activity_login-->
+    <string name="login_Act_hint_email">Email</string>
+    <string name="login_Act_hint_password">Password</string>
+    <string name="login_Act_btn_login">Login</string>
+    <string name="login_Act_btn_link_signup">Register</string>
+    <string name="login_Act_forgetPassword">IF YOU FORGET PASSWORD</string>
+    <string name="login_Act_click">click here</string>
+    <!-- end activity_login-->
+
+    <!-- activity_profile-->
+    <string name="profile_Act_image_discription">profile image</string>
+    <string name="profile_Act_profile_name">dispaly_profile_name</string>
+    <string name="profile_Act_current_user_job">current_user_job</string>
+    <!-- end activity_profile-->
+
+    <!-- activity_register-->
+    <string name="register_Act_Fname">First Name</string>
+    <string name="register_Act_Lname">Last Name</string>
+    <string name="register_Act_hint_email">email</string>
+    <string name="register_Act_hint_password">password</string>
+    <string name="register_Act_hint_Confpassword">Confirm Password</string>
+    <string name="register_Act_hint_job">Job</string>
+    <string name="register_Act_hint_phone">Phone</string>
+    <string name="register_Act_hint_Address">Address</string>
+    <string name="register_Act_gender">Gender</string>
+    <string name="register_Act_male">Male</string>
+    <string name="register_Act_female">Female</string>
+    <string name="register_Act_btn_sign_up">Register !!</string>
+    <string name="register_Act_btn_link_login">Already have an account Login !!</string>
+    <!-- end activity_register-->
+
+    <!-- activity_send_notification-->
+    <string name="send_notification_Act_Send_to_all">Send to all</string>
+    <string name="send_notification_Act_Send_to_one">Send to one</string>
+    <string name="send_notification_Act_hint_message_title"> Enter Message Title</string>
+    <string name="send_notification_Act_hint_message">Enter Message</string>
+    <string name="send_notification_Act_hint_image_URL">Enter Image URL (Optional)</string>
+    <string name="send_notification_Act_btn_send">Send</string>
+    <!-- end activity_send_notification-->
+
+    <!-- activity_splash-->
+    <string name="splash_Act_welcome_caption">CUHM !!</string>
+    <string name="splash_Act_welcome_text"> Way to Help Others </string>
+    <!-- end activity_splash-->
+
+    <!-- activity_emergency-->
+
+    <string name="emergency_Act_ambulance">Ambulance</string>
+    <string name="emergency_Act_fire">Fire</string>
+    <string name="emergency_Act_police">Police</string>
+    <string name="emergency_Act_app_support">APP Support</string>
+    <string name="emergency_Act_btn5">Button 5</string>
+    <string name="emergency_Act_btn6">Button 6</string>
+    <!-- end activity_emergency-->
+
+    <!-- activity_reqHelp-->
+
+    <string-array name="reqHelp_Act_problemCategories">
+        <item>Choose a problem…</item>
+        <item>Accident</item>
+        <item>Fire</item>
+        <item>Traffic</item>
+        <item>Technical Engine</item>
+    </string-array>
+    <string name="reqHelp_Act_write_desc">Write Description</string>
+    <!-- end activity_reqHelp-->
+
+    <!-- fragment_about_us-->
+    <string name="about_us_frag_write_desc">write description</string>
+    <!-- end fragment_about_us-->
+
+    <!-- fragment_app_setting-->
+    <string name="app_setting_frag_app_settings">App Settings</string>
+    <!-- end fragment_app_setting-->
+
+    <!-- fragment_contact_us-->
+    <string name="contact_us_frag_hint_user_name">Name</string>
+    <string name="contact_us_frag_hint_email"> E-mail</string>
+    <string name="contact_us_frag_hint_message">Enter your message</string>
+    <string name="contact_us_frag_reset">Reset</string>
+    <string name="contact_us_frag_send">Send</string>
+    <!-- end fragment_contact_us-->
+
+    <!-- fragment_home-->
+    <string name="home_frag_emergency">Emergency</string>
+    <string name="home_frag_request_help">Request Help</string>
+    <string name="home_frag_send_notification">Send Notification</string>
+    <!-- end fragment_home-->
+
+    <!-- fragment_notification_settings-->
+    <string name="notification_setting_frag_notification_settings">Notification Settings</string>
+    <!-- end fragment_notification_settings-->
+
+    <!-- fragment_profile-->
+    <string name="profile_frag_Fname">First Name</string>
+    <string name="profile_frag_location">Location</string>
+    <string name="profile_frag_Lname">Last Name</string>
+    <string name="profile_frag_curr_location">current Location</string>
+    <string name="profile_frag_near_helper"> Near By Helper</string>
+    <string name="profile_frag_email"> E-mail</string>
+    <string name="profile_frag_phone"> Phone</string>
+    <string name="profile_frag_address"> address</string>
+    <string name="profile_frag_job"> job</string>
+    <!-- end fragment_profile-->
+
+    <!-- fragment_terms_and_policies-->
+    <string name="terms_and_policies_frag_terms_and_policies">Terms And Policies</string>
+    <!-- end fragment_terms_and_policies -->
+
+    <!-- nav_header-->
+    <string name="nav_header_android_studio">Android Studio</string>
+    <string name="nav_header_android_studio_email">android.studio@android.com</string>
+    <!-- end nav_header -->
+
+    <!-- notification_list-->
+    <string name="notification_list_user_name">User Name</string>
+    <string name="notification_list_problem">Problem</string>
+    <string name="notification_list_description">description</string>
+    <!-- end notification_list -->
+
+    <!-- users_layout-->
+    <string name="users_layout_users_name">users_name</string>
+    <string name="users_layout_users_status">Job</string>
+    <!-- end users_layout -->
+    <!-- end Activities  -->
 </resources>

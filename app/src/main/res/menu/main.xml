@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/action_profile"
-        android:title="Profile"
+        android:title="@string/menu_main_action_profile"
         android:orderInCategory="100"
         app:showAsAction="never" />
     <item android:id="@+id/action_appsettings"
-        android:title="@string/action_settings"
+        android:title="@string/menu_main_app_setting"
         android:orderInCategory="100"
         app:showAsAction="never" />
     <item
         android:id="@+id/btnsignout"
         android:orderInCategory="101"
-        android:title="SignOut" />
+        android:title="@string/menu_main_btnsignout" />
 </menu>

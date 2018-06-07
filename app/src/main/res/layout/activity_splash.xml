@@ -24,7 +24,7 @@
         android:layout_above="@id/welcome_caption"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        android:text="CUHM !!"
+        android:text="@string/splash_Act_welcome_caption"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp" />
@@ -36,7 +36,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
-        android:text=" Way to Help Others "
+        android:text="@string/splash_Act_welcome_text"
         android:textAllCaps="true"
         android:textColor="@color/colorPrimary"
         android:textSize="23sp" />

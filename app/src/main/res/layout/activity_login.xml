@@ -28,7 +28,7 @@
                 android:id="@+id/login_input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_email"
+                android:hint="@string/login_Act_hint_email"
                 android:inputType="textEmailAddress"
                 android:textColor="#000000"
                 android:textColorLink="@color/bg_login" />
@@ -43,7 +43,7 @@
                 android:id="@+id/login_input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_password"
+                android:hint="@string/login_Act_hint_password"
                 android:inputType="textPassword"
                 android:textColor="#000000" />
         </android.support.design.widget.TextInputLayout>
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/buttonblue"
-            android:text="@string/btn_login"
+            android:text="@string/login_Act_btn_login"
             android:textColor="@android:color/white" />
 
         <Button
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:background="@drawable/buttonblue"
-            android:text="@string/btn_link_signup"
+            android:text="@string/login_Act_btn_link_signup"
             android:textColor="@android:color/white" />
 
         <LinearLayout
@@ -76,7 +76,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="IF YOU FORGET PASSWORD " />
+                android:text="@string/login_Act_forgetPassword" />
 
             <Button
                 android:id="@+id/btn_link_login"
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:onClick="forgetPassword"
-                android:text="click here"
+                android:text="@string/login_Act_click"
                 android:textColor="@android:color/holo_orange_dark" />
         </LinearLayout>
 

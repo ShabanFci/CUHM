@@ -22,12 +22,12 @@
             <Button
                 android:id="@+id/btn_ambulance"
                 style="@style/styleButton"
-                android:text="@string/button_1QHelp" />
+                android:text="@string/emergency_Act_ambulance" />
 
             <Button
                 android:id="@+id/btn_fire"
                 style="@style/styleButton"
-                android:text="@string/button_2QHelp" />
+                android:text="@string/emergency_Act_fire" />
 
         </LinearLayout>
 
@@ -42,12 +42,12 @@
             <Button
                 android:id="@+id/btn_police"
                 style="@style/styleButton"
-                android:text="@string/button_3QHelp" />
+                android:text="@string/emergency_Act_police" />
 
             <Button
                 android:id="@+id/app_support"
                 style="@style/styleButton"
-                android:text="@string/button_4QHelp" />
+                android:text="@string/emergency_Act_app_support" />
 
         </LinearLayout>
 
@@ -62,17 +62,13 @@
             <Button
                 android:id="@+id/b5"
                 style="@style/styleButton"
-                android:text="@string/button_5QHelp" />
+                android:text="@string/emergency_Act_btn5" />
 
             <Button
                 android:id="@+id/b6"
                 style="@style/styleButton"
-                android:text="@string/button_6QHelp" />
+                android:text="@string/emergency_Act_btn6" />
 
         </LinearLayout>
-
-
     </LinearLayout>
-
-
 </ScrollView>

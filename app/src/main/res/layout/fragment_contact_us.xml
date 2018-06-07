@@ -13,7 +13,7 @@
         android:layout_marginTop="30dp"
         android:elevation="1dp"
         android:ems="15"
-        android:hint="@string/user_name_hint"
+        android:hint="@string/contact_us_frag_hint_user_name"
         android:inputType="textPersonName" />
 
     <EditText
@@ -24,7 +24,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:ems="15"
-        android:hint="@string/user_name_email"
+        android:hint="@string/contact_us_frag_hint_email"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -36,7 +36,7 @@
         android:layout_marginTop="18dp"
         android:ems="15"
         android:gravity="top"
-        android:hint="@string/user_name_message"
+        android:hint="@string/contact_us_frag_hint_message"
         android:inputType="textMultiLine" />
 
     <LinearLayout
@@ -51,7 +51,7 @@
             android:layout_marginBottom="40dp"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
-            android:text="@string/reset" />
+            android:text="@string/contact_us_frag_reset" />
 
         <Button
             android:id="@+id/send"
@@ -60,7 +60,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
-            android:text="@string/send" />
+            android:text="@string/contact_us_frag_send" />
     </LinearLayout>
 
 </LinearLayout>
