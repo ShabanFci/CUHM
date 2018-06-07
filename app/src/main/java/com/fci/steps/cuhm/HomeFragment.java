@@ -69,7 +69,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         // Required empty public constructor
     }
 
-    String email;
+    String email,first_name,last_name ;
     String  title ;
     String message;
 
@@ -78,10 +78,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-//        mTokenRegister = view.findViewById(R.id.mTokenReg);
         buttonSendPush = view.findViewById(R.id.buttonSendNotification);
-        //adding listener to view
-//        mTokenRegister.setOnClickListener(this);
         buttonSendPush.setOnClickListener(this);
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();//Auth
         String currentUser = mCurrentUser.getUid();
@@ -91,6 +88,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 email = dataSnapshot.child("email").getValue().toString();
+                first_name = dataSnapshot.child("fname").getValue().toString();
+                last_name = dataSnapshot.child("lname").getValue().toString();
             }
 
             @Override
@@ -180,7 +179,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 final Spinner spinCategories = (Spinner) mView.findViewById(R.id.spinCategory);
                 ArrayAdapter adapter = new ArrayAdapter(getActivity(),
                         android.R.layout.simple_spinner_item,
-                        getResources().getStringArray(R.array.problemCategories));
+                        getResources().getStringArray(R.array.reqHelp_Act_problemCategories));
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinCategories.setAdapter(adapter);
                 final EditText editProbDescription = mView.findViewById(R.id.problem_description);
@@ -296,6 +295,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
+                params.put("first_name", first_name);
+                params.put("last_name", last_name);
                 params.put("email", email);
                 params.put("token", token);
                 return params;

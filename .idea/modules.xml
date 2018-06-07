@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/CUHM.iml" filepath="$PROJECT_DIR$/.idea/CUHM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CUHM.iml" filepath="$PROJECT_DIR$/CUHM.iml" />
       <module fileurl="file://D:\FCI Courses\Forth year\project\project source\CUHM\CUHM.iml" filepath="D:\FCI Courses\Forth year\project\project source\CUHM\CUHM.iml" />
+      <module fileurl="file://F:\Udacity\AndroidBasicNanoDegree\AndroidStudioProjects\CUHM\.idea\CUHM.iml" filepath="F:\Udacity\AndroidBasicNanoDegree\AndroidStudioProjects\CUHM\.idea\CUHM.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
