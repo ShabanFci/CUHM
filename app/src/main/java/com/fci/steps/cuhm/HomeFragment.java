@@ -180,7 +180,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 final Spinner spinCategories = (Spinner) mView.findViewById(R.id.spinCategory);
                 ArrayAdapter adapter = new ArrayAdapter(getActivity(),
                         android.R.layout.simple_spinner_item,
-                        getResources().getStringArray(R.array.problemCategories));
+                        getResources().getStringArray(R.array.reqHelp_Act_problemCategories));
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinCategories.setAdapter(adapter);
                 final EditText editProbDescription = mView.findViewById(R.id.problem_description);
