@@ -86,7 +86,7 @@ public class ProfileFragment extends Fragment {
                 userJob.setText(job);
                 userPhone.setText(phone);
 
-                Picasso.with(getActivity()).load(image).placeholder(R.drawable.ic_launcher_foreground).into(mImageView);
+//                Picasso.with(getActivity()).load(image).placeholder(R.drawable.ic_launcher_foreground).into(mImageView);
                 if (!image.equals("default")) {
 //                    Picasso.with(SettingActivity.this).load(image).into(mProfileImage);
                     Picasso.with(getActivity()).load(image).placeholder(R.mipmap.ic_launcher_round).into(mImageView);

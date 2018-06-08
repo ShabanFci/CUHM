@@ -55,6 +55,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private static final String TAG = "MONO";
     Button emergencyHelp, requestHelp, mTokenRegister, buttonSendPush;
+    double current_user_Lat,current_user_long;
     //FireBase
     DatabaseReference mDatabase;
     //Firebase Auth and DataBase
@@ -157,12 +158,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 dialog.show();
             }
         });
+        getCurrentUserLocation();
         requestHelp.setOnClickListener(new View.OnClickListener()
 
         {
             @Override
             public void onClick(View view) {
-
+                Toast.makeText(getContext(), "Latitude :"+current_user_Lat+" Longitude:"+current_user_long, Toast.LENGTH_SHORT).show();
                 sendTokenToServer();
 
                 loadRegisteredDevices();
@@ -416,4 +418,22 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             startActivity(new Intent(getActivity(), ActivitySendPushNotification.class));
         }
     }
+
+    public void getCurrentUserLocation() {
+
+        FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+        final String uId = current_user.getUid();
+        DatabaseReference Curr_ref = FirebaseDatabase.getInstance().getReference().child("location");
+        Curr_ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                 current_user_Lat=Double.parseDouble(  dataSnapshot.child(uId).child("latitude").getValue().toString());
+                current_user_long= Double.parseDouble(  dataSnapshot.child(uId).child("longitude").getValue().toString());
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        }
 }
