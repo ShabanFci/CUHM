@@ -30,7 +30,7 @@ import java.util.List;
 public class NotificationFragment extends Fragment {
 
     //the URL having the json data
-    private static final String JSON_URL = "http://cuhm.000webhostapp.com/FCMExample/sendMultiplePush.php";
+    private static final String JSON_URL = "http://cuhm.000webhostapp.com/FCMExample/getnotif.php";
 //    private static final String JSON_URL = "https://simplifiedcoding.net/demos/view-flipper/heroes.php";
 
     //listView object
@@ -76,18 +76,18 @@ public class NotificationFragment extends Fragment {
 
                             //we have the array named notificationArray inside the object
                             //so here we are getting that json array
-                            JSONArray notificationArray = obj.getJSONArray("heroes");
+                            JSONArray notificationArray = obj.getJSONArray("server_response");
 
                             //now looping through all the elements of the json array
                             for (int i = 0; i < notificationArray.length(); i++) {
                                 //getting the json object of the particular index inside the array
                                 JSONObject notificationObject = notificationArray.getJSONObject(i);
 
-                                //creating a hero object and giving them the values from json object
-                                Notifications hero = new Notifications(notificationObject.getString("name"), notificationObject.getString("imageurl"));
+                                //creating a notification object and giving them the values from json object
+                                Notifications my_notification = new Notifications(notificationObject.getString("first_name"),notificationObject.getString("last_name"),notificationObject.getString("title"), notificationObject.getString("message"));
 
                                 //adding the notification to notificationList
-                                notification_list.add(hero);
+                                notification_list.add(my_notification);
                             }
                             //creating custom adapter object
                             ListViewAdapter adapter = new ListViewAdapter(notification_list, getActivity());

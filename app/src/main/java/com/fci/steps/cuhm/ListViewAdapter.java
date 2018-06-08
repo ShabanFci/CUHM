@@ -39,6 +39,7 @@ public class ListViewAdapter extends ArrayAdapter<Notifications> {
         View listViewItem = inflater.inflate(R.layout.notifications_list, null, true);
 
         //getting text views
+        TextView user_name=listViewItem.findViewById(R.id.users_name);
         TextView textViewProblem = listViewItem.findViewById(R.id.problem);
         TextView textViewProblemDescription = listViewItem.findViewById(R.id.description_problem);
 
@@ -46,6 +47,7 @@ public class ListViewAdapter extends ArrayAdapter<Notifications> {
         Notifications notifications = notification_list.get(position);
 
         //setting hero values to textViews
+        user_name.setText(notifications.getFirst_name() +" "+notifications.getLast_name());
         textViewProblem.setText(notifications.getTitle());
         textViewProblemDescription.setText(notifications.getMessage());
 
