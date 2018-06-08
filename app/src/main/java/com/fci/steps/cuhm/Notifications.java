@@ -5,8 +5,16 @@ package com.fci.steps.cuhm;
  */
 
 public class Notifications {
-    String first_name,last_name,title ,message ;
+    String first_name, last_name, problem, description_problem;
 
+
+    public Notifications(String first_name, String last_name, String problem, String description_problem) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+
+        this.problem = problem;
+        this.description_problem = description_problem;
+    }
     public String getFirst_name() {
         return first_name;
     }
@@ -23,28 +31,19 @@ public class Notifications {
         this.last_name = last_name;
     }
 
-    public  Notifications (String first_name , String last_name , String title , String message)
-    {
-        this.first_name=first_name;
-        this.last_name=last_name;
-
-        this.title =title;
-        this.message =message ;
+    public String getProblem() {
+        return problem;
     }
 
-    public String getTitle() {
-        return title;
+    public void setProblem(String problem) {
+        this.problem = problem;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getDescription_problem() {
+        return description_problem;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
+    public void setDescription_problem(String description_problem) {
+        this.description_problem = description_problem;
     }
 }

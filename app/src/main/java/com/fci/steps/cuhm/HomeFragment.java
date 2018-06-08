@@ -70,8 +70,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     String email,first_name,last_name ;
-    String  title ;
-    String message;
+    String  problem ;
+    String description_problem;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -190,16 +190,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
 
-                         title = spinCategories.getSelectedItem().toString();
-                         message = editProbDescription.getText().toString();
+                         problem = spinCategories.getSelectedItem().toString();
+                         description_problem = editProbDescription.getText().toString();
                         sendMultiplePush();
                         if (!spinCategories.getSelectedItem().toString().equalsIgnoreCase("Choose a problem..."))
                             Toast.makeText(getActivity(),
                                     spinCategories.getSelectedItem().toString(),
                                     Toast.LENGTH_SHORT).show();
                         HashMap<String, String> userMap = new HashMap<>();
-                        userMap.put("problem_type", title);
-                        userMap.put("problem_description", message);
+                        userMap.put("problem", problem);
+                        userMap.put("description_problem", description_problem);
                         mDatabase.setValue(userMap);
                         dialogInterface.dismiss();
                     }
@@ -369,8 +369,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("title", title);
-                params.put("message", message);
+                params.put("problem", problem);
+                params.put("description_problem", description_problem);
 
                 return params;
             }
@@ -400,8 +400,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 Map<String, String> params = new HashMap<>();
                 params.put("first_name", first_name);
                 params.put("last_name", last_name);
-                params.put("title", title);
-                params.put("message", message);
+                params.put("problem", problem);
+                params.put("description_problem", description_problem);
 
                 return params;
             }

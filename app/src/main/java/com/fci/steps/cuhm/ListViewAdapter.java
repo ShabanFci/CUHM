@@ -48,8 +48,8 @@ public class ListViewAdapter extends ArrayAdapter<Notifications> {
 
         //setting hero values to textViews
         user_name.setText(notifications.getFirst_name() +" "+notifications.getLast_name());
-        textViewProblem.setText(notifications.getTitle());
-        textViewProblemDescription.setText(notifications.getMessage());
+        textViewProblem.setText(notifications.getProblem());
+        textViewProblemDescription.setText(notifications.getDescription_problem());
 
         //returning the listItem
         return listViewItem;

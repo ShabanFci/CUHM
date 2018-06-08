@@ -84,7 +84,11 @@ public class NotificationFragment extends Fragment {
                                 JSONObject notificationObject = notificationArray.getJSONObject(i);
 
                                 //creating a notification object and giving them the values from json object
-                                Notifications my_notification = new Notifications(notificationObject.getString("first_name"),notificationObject.getString("last_name"),notificationObject.getString("title"), notificationObject.getString("message"));
+                                Notifications my_notification = new Notifications(
+                                        notificationObject.getString("first_name"),
+                                        notificationObject.getString("last_name"),
+                                        notificationObject.getString("problem"),
+                                        notificationObject.getString("description_problem"));
 
                                 //adding the notification to notificationList
                                 notification_list.add(my_notification);
