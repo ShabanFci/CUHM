@@ -188,11 +188,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        sendMultiplePush();
+
 
                          title = spinCategories.getSelectedItem().toString();
                          message = editProbDescription.getText().toString();
-
+                        sendMultiplePush();
                         if (!spinCategories.getSelectedItem().toString().equalsIgnoreCase("Choose a problem..."))
                             Toast.makeText(getActivity(),
                                     spinCategories.getSelectedItem().toString(),
@@ -275,6 +275,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     public void onResponse(String response) {
                         mRegProgress.dismiss();
                         try {
+
                             JSONObject obj = new JSONObject(response);
                             Toast.makeText(getActivity(),obj.getString("message"), Toast.LENGTH_LONG).show();
 
@@ -356,6 +357,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         mRegProgress.dismiss();
 
                         Toast.makeText(getActivity(), response, Toast.LENGTH_LONG).show();
+                        savenotification();
                     }
                 },
                 new Response.ErrorListener() {
@@ -367,6 +369,37 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
+                params.put("title", title);
+                params.put("message", message);
+
+                return params;
+            }
+        };
+
+        MyVolley.getInstance(getContext()).addToRequestQueue(stringRequest);
+    }
+    public void savenotification(){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, EndPoints.URL_SAVE_NOTIFICATION,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        mRegProgress.dismiss();
+
+                        Toast.makeText(getActivity(), response, Toast.LENGTH_LONG).show();
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("first_name", first_name);
+                params.put("last_name", last_name);
                 params.put("title", title);
                 params.put("message", message);
 
