@@ -3,10 +3,13 @@ package com.fci.steps.cuhm;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -29,15 +32,13 @@ import java.util.List;
  */
 public class NotificationFragment extends Fragment {
 
+    private RecyclerView mList;
+
+    private List<Notifications> mNotificationList;
+    private RecyclerViewAdapter mRecyclerAdapter;
+
     //the URL having the json data
     private static final String JSON_URL = "http://cuhm.000webhostapp.com/FCMExample/getnotif.php";
-//    private static final String JSON_URL = "https://simplifiedcoding.net/demos/view-flipper/heroes.php";
-
-    //listView object
-    ListView listView;
-
-    //the notification list where we will store all the notification objects after parsing json
-    List<Notifications> notification_list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,9 +46,18 @@ public class NotificationFragment extends Fragment {
         View Mono = inflater.inflate(R.layout.fragment_notification, container, false);
 
 
-        //initializing listView and Notification list
-        listView = (ListView) Mono.findViewById(R.id.listView);
-        notification_list = new ArrayList<>();
+        mList = Mono.findViewById(R.id.main_notification_list);
+        mNotificationList = new ArrayList<>();
+        mRecyclerAdapter = new RecyclerViewAdapter( mNotificationList);
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+        mList.setLayoutManager(mLayoutManager);
+        // adding inbuilt divider line
+        mList.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
+        // adding custom divider line with padding 16dp
+        // recyclerView.addItemDecoration(new MyDividerItemDecoration(this, LinearLayoutManager.HORIZONTAL, 16));
+        mList.setItemAnimator(new DefaultItemAnimator());
+        mList.setAdapter(mRecyclerAdapter);
 
         //this method will fetch and parse the data
         loadNotificationList();
@@ -55,20 +65,12 @@ public class NotificationFragment extends Fragment {
     }
 
     private void loadNotificationList() {
-//        //getting the progressbar
-//        final ProgressBar  progressBar = (ProgressBar) getActivity().findViewById(R.id.progressBar);
-//
-//        //making the progressbar visible
-//        progressBar.setVisibility(View.VISIBLE);
 
         //creating a string request to send request to the url
         StringRequest stringRequest = new StringRequest(Request.Method.GET, JSON_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        //hiding the progressbar after completion
-//                        progressBar.setVisibility(View.INVISIBLE);
-
 
                         try {
                             //getting the whole json object from the response
@@ -91,16 +93,13 @@ public class NotificationFragment extends Fragment {
                                         notificationObject.getString("description_problem"));
 
                                 //adding the notification to notificationList
-                                notification_list.add(my_notification);
+                                mNotificationList.add(my_notification);
                             }
-                            //creating custom adapter object
-                            ListViewAdapter adapter = new ListViewAdapter(notification_list, getActivity());
-                            //adding the adapter to listView
-                            listView.setAdapter(adapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+                        mRecyclerAdapter.notifyDataSetChanged();
                     }
                 },
                 new Response.ErrorListener() {
@@ -110,7 +109,6 @@ public class NotificationFragment extends Fragment {
                         Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-
 
         //creating a request queue
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());

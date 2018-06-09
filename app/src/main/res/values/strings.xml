@@ -5,7 +5,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
-
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="title_activity_app_setting">App Setting</string>
@@ -90,7 +89,6 @@
     <string name="hint_dob">Enter Age</string>
 
 
-
     <string name="err_msg_name">Please enter a Name</string>
     <string name="err_msg_required">Valid Input Required</string>
     <string name="err_msg_email">Please enter a Valid Email</string>
@@ -100,11 +98,8 @@
     <string name="btn_link_signup">Register</string>
 
 
-
-
     <string name="show_email_in_navigation">mono@gmail.com</string>
     <string name="username_in_navigation">MONO</string>
-
 
 
     <!--Quick Help Buttons-->
@@ -137,9 +132,6 @@
     <string name="msg_location_service_started">Location Tracking Started</string>
     <string name="btn_label_refresh">Refresh</string>
     <string name="title_activity_settings">Settings</string>
-
-
-
 
 
     <!-- menus  -->
