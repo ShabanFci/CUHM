@@ -12,8 +12,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/backgroungimg"
-        android:scaleType="fitXY"
-        android:contentDescription="@string/profile_Act_image_discription"/>
+        android:contentDescription="profileimage"
+        android:scaleType="centerCrop" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/pro"
@@ -31,7 +31,7 @@
         android:layout_below="@+id/profile_image"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="124dp"
-        android:text="@string/profile_Act_profile_name"
+        android:text="dispaly_profile_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="22sp" />
 
@@ -42,6 +42,6 @@
         android:layout_below="@+id/display_profile_name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="58dp"
-        android:text="@string/profile_Act_current_user_job"
+        android:text="current_user_job"
         android:textSize="18sp" />
 </RelativeLayout>
