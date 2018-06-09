@@ -241,10 +241,11 @@
 
     <string-array name="reqHelp_Act_problemCategories">
         <item>Choose a problem…</item>
-        <item>Accident</item>
         <item>Fire</item>
         <item>Traffic</item>
-        <item>Technical Engine</item>
+        <item>Education</item>
+        <item>Medical</item>
+        <item>Daily Problems</item>
     </string-array>
     <string name="reqHelp_Act_write_desc">Write Description</string>
     <!-- end activity_reqHelp-->

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -39,17 +40,38 @@ public class ListViewAdapter extends ArrayAdapter<Notifications> {
         View listViewItem = inflater.inflate(R.layout.notifications_list, null, true);
 
         //getting text views
-        TextView user_name=listViewItem.findViewById(R.id.users_name);
+        ImageView imageView = listViewItem.findViewById(R.id.users_profile);
+        TextView user_name = listViewItem.findViewById(R.id.users_name);
         TextView textViewProblem = listViewItem.findViewById(R.id.problem);
         TextView textViewProblemDescription = listViewItem.findViewById(R.id.description_problem);
+
 
         //Getting the hero for the specified position
         Notifications notifications = notification_list.get(position);
 
+        String problem = notifications.getProblem().toString();
+        String description_problem = notifications.getDescription_problem().toString();
+
         //setting hero values to textViews
-        user_name.setText(notifications.getFirst_name() +" "+notifications.getLast_name());
-        textViewProblem.setText(notifications.getProblem());
-        textViewProblemDescription.setText(notifications.getDescription_problem());
+        user_name.setText(notifications.getFirst_name() + " " + notifications.getLast_name());
+        textViewProblem.setText(problem);
+        textViewProblemDescription.setText(description_problem);
+
+        if (problem.equals("Fire")) {
+            imageView.setImageResource(R.drawable.fire);
+        }
+        if (problem.equals("Traffic")) {
+            imageView.setImageResource(R.drawable.traffic);
+        }
+        if (problem.equals("Education")) {
+            imageView.setImageResource(R.drawable.education);
+        }
+        if (problem.equals("Medical")) {
+            imageView.setImageResource(R.drawable.medical);
+        }
+        if (problem.equals("Daily Problems")) {
+            imageView.setImageResource(R.drawable.social);
+        }
 
         //returning the listItem
         return listViewItem;
