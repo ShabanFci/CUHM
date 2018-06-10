@@ -1,7 +1,6 @@
 package com.fci.steps.cuhm;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -67,24 +66,24 @@ public class NotificationFragment extends Fragment {
 
         //this method will fetch and parse the data
         loadNotificationList();
-        mList.addOnItemTouchListener(
-                new RecyclerItemClickListener(getActivity(), mList, new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        Intent intent = new Intent(getActivity(), NotificationDetailsActivity.class);
-                        intent.putExtra("first_name", first_name);
-                        intent.putExtra("last_name", last_name);
-                        intent.putExtra("problem", problem);
-                        intent.putExtra("description_problem", description_problem);
-                        startActivity(intent);
-                    }
-
-                    @Override
-                    public void onLongItemClick(View view, int position) {
-                        // do whatever
-                    }
-                })
-        );
+//        mList.addOnItemTouchListener(
+//                new RecyclerItemClickListener(getActivity(), mList, new RecyclerItemClickListener.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(View view, int position) {
+//                        Intent intent = new Intent(getActivity(), NotificationDetailsActivity.class);
+//                        intent.putExtra("first_name", first_name);
+//                        intent.putExtra("last_name", last_name);
+//                        intent.putExtra("problem", problem);
+//                        intent.putExtra("description_problem", description_problem);
+//                        startActivity(intent);
+//                    }
+//
+//                    @Override
+//                    public void onLongItemClick(View view, int position) {
+//                        // do whatever
+//                    }
+//                })
+//        );
         return Mono;
     }
 

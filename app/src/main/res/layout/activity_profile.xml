@@ -5,11 +5,15 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.fci.steps.cuhm.ProfileActivity">
+
+    <include
+        android:id="@+id/profile_toolbar"
+        layout="@layout/app_bar_layout" />
     <ImageView
         android:id="@+id/profile_image"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_alignParentTop="true"
+       android:layout_below="@id/profile_toolbar"
         android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/backgroungimg"
         android:contentDescription="profileimage"
