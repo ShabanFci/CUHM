@@ -3,6 +3,7 @@ package com.fci.steps.cuhm;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,6 +11,7 @@ public class NotificationDetailsActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
 
+    private static final String TAG = "Mono" ;
     String first_name;
     String last_name;
     String problem;
@@ -28,17 +30,20 @@ public class NotificationDetailsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Notification Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        first_name = getIntent().getStringExtra("first_name");
-        last_name = getIntent().getStringExtra("last_name");
-        problem = getIntent().getStringExtra("problem");
-        description_problem = getIntent().getStringExtra("description_problem");
+        if (getIntent().hasExtra("first_name") && getIntent().hasExtra("last_name")) {
+            Log.d(TAG, "getIncomingIntent: found intent extras.");
 
-        mUserName = findViewById(R.id.notification_details_user_name);
-        mProblem = findViewById(R.id.notification_details_problem);
-        mDescriptionProblem = findViewById(R.id.notification_details_description_problem);
+            first_name = getIntent().getStringExtra("first_name");
+            last_name = getIntent().getStringExtra("last_name");
+            problem = getIntent().getStringExtra("problem");
+            description_problem = getIntent().getStringExtra("description_problem");
+        }
+            mUserName = findViewById(R.id.notification_details_user_name);
+            mProblem = findViewById(R.id.notification_details_problem);
+            mDescriptionProblem = findViewById(R.id.notification_details_description_problem);
 
-        mUserName.setText(first_name + " " + last_name);
-        mProblem.setText(problem);
-        mDescriptionProblem.setText(description_problem);
+            mUserName.setText(first_name + " " + last_name);
+            mProblem.setText(problem);
+            mDescriptionProblem.setText(description_problem);
+        }
     }
-}

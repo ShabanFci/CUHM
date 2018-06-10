@@ -53,7 +53,7 @@ public class NotificationFragment extends Fragment {
 
         mList = Mono.findViewById(R.id.main_notification_list);
         mNotificationList = new ArrayList<>();
-        mRecyclerAdapter = new RecyclerViewAdapter(mNotificationList);
+        mRecyclerAdapter = new RecyclerViewAdapter(getActivity(),mNotificationList);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mList.setLayoutManager(mLayoutManager);
