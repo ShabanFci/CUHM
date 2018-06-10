@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
- class NearbyHelperMapActivity extends FragmentActivity implements OnMapReadyCallback {
+public class NearbyHelperMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private static final String TAG = NearbyHelperMapActivity.class.getSimpleName();
     private HashMap<String, Marker> mMarkers = new HashMap<>();
