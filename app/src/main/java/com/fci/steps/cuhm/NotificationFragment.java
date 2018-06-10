@@ -1,6 +1,7 @@
 package com.fci.steps.cuhm;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -32,6 +33,11 @@ import java.util.List;
  */
 public class NotificationFragment extends Fragment {
 
+    String first_name;
+    String last_name;
+    String problem;
+    String description_problem;
+
     private RecyclerView mList;
 
     private List<Notifications> mNotificationList;
@@ -48,7 +54,7 @@ public class NotificationFragment extends Fragment {
 
         mList = Mono.findViewById(R.id.main_notification_list);
         mNotificationList = new ArrayList<>();
-        mRecyclerAdapter = new RecyclerViewAdapter( mNotificationList);
+        mRecyclerAdapter = new RecyclerViewAdapter(mNotificationList);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mList.setLayoutManager(mLayoutManager);
@@ -61,6 +67,24 @@ public class NotificationFragment extends Fragment {
 
         //this method will fetch and parse the data
         loadNotificationList();
+        mList.addOnItemTouchListener(
+                new RecyclerItemClickListener(getActivity(), mList, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent intent = new Intent(getActivity(), NotificationDetailsActivity.class);
+                        intent.putExtra("first_name", first_name);
+                        intent.putExtra("last_name", last_name);
+                        intent.putExtra("problem", problem);
+                        intent.putExtra("description_problem", description_problem);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
         return Mono;
     }
 
@@ -87,10 +111,10 @@ public class NotificationFragment extends Fragment {
 
                                 //creating a notification object and giving them the values from json object
                                 Notifications my_notification = new Notifications(
-                                        notificationObject.getString("first_name"),
-                                        notificationObject.getString("last_name"),
-                                        notificationObject.getString("problem"),
-                                        notificationObject.getString("description_problem"));
+                                        first_name = notificationObject.getString("first_name"),
+                                        last_name = notificationObject.getString("last_name"),
+                                        problem = notificationObject.getString("problem"),
+                                        description_problem = notificationObject.getString("description_problem"));
 
                                 //adding the notification to notificationList
                                 mNotificationList.add(my_notification);
