@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 userEmail.setText(email);
                 if (!image.equals("default")) {
                     Picasso.with(MainActivity.this).load(image).into(profileImage);
+
                 }
             }
 
