@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:scrollbars="none"
     tools:context="com.fci.steps.cuhm.RegisterActivity">
@@ -70,7 +71,8 @@
                 android:id="@+id/signup_input_layout_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                app:passwordToggleEnabled="true">
 
                 <EditText
                     android:id="@+id/reg_password"
@@ -85,7 +87,8 @@
                 android:id="@+id/signup_input_layout_Confpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                app:passwordToggleEnabled="true">
 
                 <EditText
                     android:id="@+id/reg_Confpassword"
