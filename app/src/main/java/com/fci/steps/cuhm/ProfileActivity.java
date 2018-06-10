@@ -3,6 +3,7 @@ package com.fci.steps.cuhm;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,7 +19,7 @@ import com.squareup.picasso.Picasso;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    // private Toolbar mToolbar;
+     private Toolbar mToolbar;
 
     private TextView mDisplayProfileName, mDisplayProfileStatus, mDisplayProfileFriend;
     private ImageView mDisplayProfileImage ,mDisplayProfileImageBG;
@@ -34,10 +35,10 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        //mToolbar = (Toolbar) findViewById(R.id.connection_profile_toolbar);
-        //setSupportActionBar(mToolbar);
-//        getSupportActionBar().setTitle("Connection Profile");
-        //      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        mToolbar = (Toolbar) findViewById(R.id.profile_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Friend Profile");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final String userId = getIntent().getStringExtra("userId");
 

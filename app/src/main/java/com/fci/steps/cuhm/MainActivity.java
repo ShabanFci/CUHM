@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 //                String phone = dataSnapshot.child("phone").getValue().toString();
 //                String image = dataSnapshot.child("image").getValue().toString();
 //                String thumb_image = dataSnapshot.child("thumb_image").getValue().toString();
-                userName.setText(fname + " " + lname);
+                userName.setText(fname+""+lname);
                 userEmail.setText(email);
             }
 
