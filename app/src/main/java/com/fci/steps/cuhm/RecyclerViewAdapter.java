@@ -77,6 +77,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             holder.imageView.setImageResource(R.drawable.medical);
         } else if (problem.equals("Daily Problems")) {
             holder.imageView.setImageResource(R.drawable.social);
+        } else if (problem.equals("Emergency Problem")) {
+            holder.imageView.setImageResource(R.drawable.emergency);
         }
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {

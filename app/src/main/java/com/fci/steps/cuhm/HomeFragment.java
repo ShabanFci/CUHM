@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     Button emergencyHelp, requestHelp, mTokenRegister, buttonSendPush;
     double current_user_Lat,current_user_long;
     //FireBase
-    DatabaseReference mDatabase;
+    DatabaseReference mDatabase,mDatabase1;
     //Firebase Auth and DataBase
     private FirebaseUser mCurrentUser;
     private DatabaseReference mRefDatabase;
@@ -106,9 +106,21 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         {
             @Override
             public void onClick(View view) {
+
+                sendTokenToServer();
+
+                loadRegisteredDevices();
+
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
                 View mView = getActivity().getLayoutInflater().inflate(R.layout.dialog_emergency, null);
                 mBuilder.setTitle("Emergency List");
+
+                FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+                String uId = current_user.getUid();
+
+                //Firebase Database
+                mDatabase1 = FirebaseDatabase.getInstance().getReference().child("Emergency Help Request").child(uId).push();
+
                 Button ambulance_btn = mView.findViewById(R.id.btn_ambulance);
                 Button fire_btn = mView.findViewById(R.id.btn_fire);
                 Button police_btn = mView.findViewById(R.id.btn_police);
@@ -118,26 +130,52 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void onClick(View view) {
                         callNumber("123");
+
+                        problem = "Emergency Problem";
+                        description_problem = "I Really Need Help As Fast As Possible";
+
+                        sendMultiplePush();
                     }
                 });
                 fire_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         callNumber("180");
+
+                        problem = "Emergency Problem";
+                        description_problem = "I Really Need Help As Fast As Possible";
+
+                        sendMultiplePush();
                     }
                 });
                 police_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         callNumber("122");
+
+                        problem = "Emergency Problem";
+                        description_problem = "I Really Need Help As Fast As Possible";
+
+                        sendMultiplePush();
                     }
                 });
                 support_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         callNumber("01145708978");
+
+                        problem = "Emergency Problem";
+                        description_problem = "I Really Need Help As Fast As Possible";
+
+                        sendMultiplePush();
                     }
                 });
+
+                HashMap<String, String> userMap = new HashMap<>();
+                userMap.put("problem", problem);
+                userMap.put("description_problem", description_problem);
+                mDatabase1.setValue(userMap);
+
                 mBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -159,13 +197,18 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 dialog.show();
             }
         });
+
         getCurrentUserLocation();
+
         requestHelp.setOnClickListener(new View.OnClickListener()
 
         {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Latitude :"+current_user_Lat+" Longitude:"+current_user_long, Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(getContext(), "Latitude :"+current_user_Lat+" Longitude:"+current_user_long,
+                        Toast.LENGTH_SHORT).show();
+
                 sendTokenToServer();
 
                 loadRegisteredDevices();
@@ -176,10 +219,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                 FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
                 String uId = current_user.getUid();
+
                 //Firebase Database
                 mDatabase = FirebaseDatabase.getInstance().getReference().child("Help_Request").child(uId).push();
 
                 final Spinner spinCategories = mView.findViewById(R.id.spinCategory);
+
                 ArrayAdapter<? extends String> adapter = new ArrayAdapter<>(getActivity(),
                         android.R.layout.simple_spinner_item,
                         getResources().getStringArray(R.array.reqHelp_Act_problemCategories));
@@ -191,11 +236,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-
-
                          problem = spinCategories.getSelectedItem().toString();
                          description_problem = editProbDescription.getText().toString();
+
                         sendMultiplePush();
+
                         if (!spinCategories.getSelectedItem().toString().equalsIgnoreCase("Choose a problem..."))
                             Toast.makeText(getActivity(),
                                     spinCategories.getSelectedItem().toString(),
@@ -254,7 +299,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    //storing token to mysql server
+    //Storing Token To Mysql Server
 
     private void sendTokenToServer() {
         mRegProgress = new ProgressDialog(getActivity());
@@ -360,7 +405,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         mRegProgress.dismiss();
 
                         Toast.makeText(getActivity(), response, Toast.LENGTH_LONG).show();
-                        savenotification();
+                        saveNotification();
                     }
                 },
                 new Response.ErrorListener() {
@@ -381,7 +426,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         MyVolley.getInstance(getContext()).addToRequestQueue(stringRequest);
     }
-    public void savenotification(){
+    public void saveNotification(){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, EndPoints.URL_SAVE_NOTIFICATION,
                 new Response.Listener<String>() {
                     @Override

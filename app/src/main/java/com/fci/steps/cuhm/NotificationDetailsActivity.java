@@ -11,13 +11,13 @@ public class NotificationDetailsActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
 
-    private static final String TAG = "Mono" ;
+    private static final String TAG = "Mono";
     String first_name;
     String last_name;
     String problem;
     String description_problem;
 
-    ImageView mProblemType;
+    ImageView mProblemTypeImage;
     TextView mUserName, mProblem, mDescriptionProblem;
 
     @Override
@@ -38,12 +38,29 @@ public class NotificationDetailsActivity extends AppCompatActivity {
             problem = getIntent().getStringExtra("problem");
             description_problem = getIntent().getStringExtra("description_problem");
         }
-            mUserName = findViewById(R.id.notification_details_user_name);
-            mProblem = findViewById(R.id.notification_details_problem);
-            mDescriptionProblem = findViewById(R.id.notification_details_description_problem);
 
-            mUserName.setText(first_name + " " + last_name);
-            mProblem.setText(problem);
-            mDescriptionProblem.setText(description_problem);
+        mProblemTypeImage = findViewById(R.id.notification_details_problem_image);
+        mUserName = findViewById(R.id.notification_details_user_name);
+        mProblem = findViewById(R.id.notification_details_problem);
+        mDescriptionProblem = findViewById(R.id.notification_details_description_problem);
+
+        mUserName.setText(first_name + " " + last_name);
+        mProblem.setText(problem);
+        mDescriptionProblem.setText(description_problem);
+
+        if (problem.equals("Fire")) {
+            mProblemTypeImage.setImageResource(R.drawable.fire);
+        } else if (problem.equals("Traffic")) {
+            mProblemTypeImage.setImageResource(R.drawable.traffic);
+        } else if (problem.equals("Education")) {
+            mProblemTypeImage.setImageResource(R.drawable.education);
+        } else if (problem.equals("Medical")) {
+            mProblemTypeImage.setImageResource(R.drawable.medical);
+        } else if (problem.equals("Daily Problems")) {
+            mProblemTypeImage.setImageResource(R.drawable.social);
+        }else if (problem.equals("Emergency Problem")) {
+            mProblemTypeImage.setImageResource(R.drawable.emergency);
         }
+
     }
+}
