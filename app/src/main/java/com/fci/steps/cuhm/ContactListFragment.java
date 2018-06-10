@@ -62,7 +62,7 @@ public class ContactListFragment extends Fragment {
                 ) {
                     @Override
                     protected void populateViewHolder(UsersViewHolder usersViewHolder, Users users, int position) {
-//                        Log.d("ref", String.valueOf(users));
+
                         String g = firebaseRecyclerAdapter.getRef(position).getKey();
 
                         usersViewHolder.setDisplayName(users.getFname() +" " +users.getlname());
