@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -64,12 +65,13 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.main_container_wrapper, fragment);
         fragmentTransaction.commit();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        profileImage = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.imageView);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        profileImage = navigationView.getHeaderView(0).findViewById(R.id.imageView);
         userName = navigationView.getHeaderView(0).findViewById(R.id.user_name);
         userEmail = navigationView.getHeaderView(0).findViewById(R.id.email);
         //Firebase Connect
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();//Auth
+        assert mCurrentUser != null;
         String currentUser = mCurrentUser.getUid();
         mStorageRef = FirebaseStorage.getInstance().getReference();
         mRefDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUser);
@@ -79,13 +81,12 @@ public class MainActivity extends AppCompatActivity {
                 String fname = dataSnapshot.child("fname").getValue().toString();
                 String lname = dataSnapshot.child("lname").getValue().toString();
                 String email = dataSnapshot.child("email").getValue().toString();
-//                String address = dataSnapshot.child("address").getValue().toString();
-//                String job = dataSnapshot.child("job").getValue().toString();
-//                String phone = dataSnapshot.child("phone").getValue().toString();
-//                String image = dataSnapshot.child("image").getValue().toString();
-//                String thumb_image = dataSnapshot.child("thumb_image").getValue().toString();
+                String image = dataSnapshot.child("image").getValue().toString();
                 userName.setText(fname + " " + lname);
                 userEmail.setText(email);
+                if (!image.equals("default")) {
+                    Picasso.with(MainActivity.this).load(image).into(profileImage);
+                }
             }
 
             @Override
@@ -139,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.main_container_wrapper, fragment);
         transaction.commit();
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         assert drawer != null;
         drawer.closeDrawer(GravityCompat.START);
     }
@@ -173,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {

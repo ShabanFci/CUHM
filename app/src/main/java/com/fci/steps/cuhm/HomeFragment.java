@@ -23,7 +23,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -44,6 +43,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 
 /**
@@ -82,6 +82,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         buttonSendPush = view.findViewById(R.id.buttonSendNotification);
         buttonSendPush.setOnClickListener(this);
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();//Auth
+        assert mCurrentUser != null;
         String currentUser = mCurrentUser.getUid();
         mStorageRef = FirebaseStorage.getInstance().getReference();
         mRefDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUser);
@@ -98,8 +99,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             }
         });
-        emergencyHelp = (Button) view.findViewById(R.id.EmerHelp);
-        requestHelp = (Button) view.findViewById(R.id.ReqHelp);
+        emergencyHelp = view.findViewById(R.id.EmerHelp);
+        requestHelp = view.findViewById(R.id.ReqHelp);
         emergencyHelp.setOnClickListener(new View.OnClickListener()
 
         {
@@ -178,8 +179,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 //Firebase Database
                 mDatabase = FirebaseDatabase.getInstance().getReference().child("Help_Request").child(uId).push();
 
-                final Spinner spinCategories = (Spinner) mView.findViewById(R.id.spinCategory);
-                ArrayAdapter adapter = new ArrayAdapter(getActivity(),
+                final Spinner spinCategories = mView.findViewById(R.id.spinCategory);
+                ArrayAdapter<? extends String> adapter = new ArrayAdapter<>(getActivity(),
                         android.R.layout.simple_spinner_item,
                         getResources().getStringArray(R.array.reqHelp_Act_problemCategories));
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -296,7 +297,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 }) {
 
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("first_name", first_name);
                 params.put("last_name", last_name);
@@ -369,7 +370,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     }
                 }) {
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("problem", problem);
                 params.put("description_problem", description_problem);
@@ -398,7 +399,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     }
                 }) {
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("first_name", first_name);
                 params.put("last_name", last_name);
@@ -422,13 +423,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void getCurrentUserLocation() {
 
         FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+        assert current_user != null;
         final String uId = current_user.getUid();
         DatabaseReference Curr_ref = FirebaseDatabase.getInstance().getReference().child("location");
         Curr_ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                 current_user_Lat=Double.parseDouble(  dataSnapshot.child(uId).child("latitude").getValue().toString());
-                current_user_long= Double.parseDouble(  dataSnapshot.child(uId).child("longitude").getValue().toString());
+                current_user_Lat = Double.parseDouble(Objects.requireNonNull(dataSnapshot.child(uId).child("latitude").getValue()).toString());
+                current_user_long = Double.parseDouble(Objects.requireNonNull(dataSnapshot.child(uId).child("longitude").getValue()).toString());
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
