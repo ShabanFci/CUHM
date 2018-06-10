@@ -1,6 +1,7 @@
 package com.fci.steps.cuhm;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -20,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.Objects;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -30,7 +33,7 @@ public class ProfileFragment extends Fragment {
 
     private DatabaseReference mRefDatabase;
     private FirebaseUser mCurrentUser;
-    private ImageView BtnEditProfile;
+    private ImageView BtnEditProfile, img;
     public TextView userName
             ,userLName
             ,userEmail
@@ -53,9 +56,7 @@ public class ProfileFragment extends Fragment {
 
         BtnEditProfile = view.findViewById(R.id.editProf);
 
-//        user_image = view.findViewById(R.id.UserImage);
         userName = view.findViewById(R.id.fname);
-//        userFName = view.findViewById(R.id.editUserFName);
         userLName = view.findViewById(R.id.user_lName);
         userAddress = view.findViewById(R.id.user_address);
         userEmail = view.findViewById(R.id.user_email);
@@ -64,32 +65,35 @@ public class ProfileFragment extends Fragment {
         mImageView = view.findViewById(R.id.UserImage);
 
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();//Auth
+        assert mCurrentUser != null;
         String userId = mCurrentUser.getUid();
 //        mStorageRef = FirebaseStorage.getInstance().getReference();//Storage
         mRefDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(userId);//DataBase
         mRefDatabase.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String fname = dataSnapshot.child("fname").getValue().toString();
-                String lname = dataSnapshot.child("lname").getValue().toString();
-                String email = dataSnapshot.child("email").getValue().toString();
-                String address = dataSnapshot.child("address").getValue().toString();
-                String job = dataSnapshot.child("job").getValue().toString();
-                String phone = dataSnapshot.child("phone").getValue().toString();
-                String image = dataSnapshot.child("image").getValue().toString();
-                String thumb_image = dataSnapshot.child("thumb_image").getValue().toString();
+                String fname = Objects.requireNonNull(dataSnapshot.child("fname").getValue()).toString();
+                String lname = Objects.requireNonNull(dataSnapshot.child("lname").getValue()).toString();
+                String email = Objects.requireNonNull(dataSnapshot.child("email").getValue()).toString();
+                String address = Objects.requireNonNull(dataSnapshot.child("address").getValue()).toString();
+                String job = Objects.requireNonNull(dataSnapshot.child("job").getValue()).toString();
+                String phone = Objects.requireNonNull(dataSnapshot.child("phone").getValue()).toString();
+                String image = Objects.requireNonNull(dataSnapshot.child("image").getValue()).toString();
+//                String thumb_image = dataSnapshot.child("thumb_image").getValue().toString();
 
-                userName.setText(fname);
-                userLName.setText(" "+lname);
+                userName.setText(fname + " ");
+                userLName.setText(lname);
                 userAddress.setText(address);
                 userEmail.setText(email);
                 userJob.setText(job);
                 userPhone.setText(phone);
 
+
 //                Picasso.with(getActivity()).load(image).placeholder(R.drawable.ic_launcher_foreground).into(mImageView);
                 if (!image.equals("default")) {
 //                    Picasso.with(SettingActivity.this).load(image).into(mProfileImage);
-                    Picasso.with(getActivity()).load(image).placeholder(R.mipmap.ic_launcher_round).into(mImageView);
+                    Picasso.with(getActivity()).load(image).placeholder(R.drawable.man).into(mImageView);
                 }
             }
 
@@ -112,7 +116,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        final Button btnNear_by_helper =(Button)view.findViewById(R.id.btn_nearByHelper);
+        final Button btnNear_by_helper = view.findViewById(R.id.btn_nearByHelper);
         btnNear_by_helper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,7 +125,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        final Button btnGetCurrentLoc =(Button)view.findViewById(R.id.btn_getCurrentLoc);
+        final Button btnGetCurrentLoc = view.findViewById(R.id.btn_getCurrentLoc);
         btnGetCurrentLoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

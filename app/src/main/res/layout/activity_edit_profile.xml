@@ -8,7 +8,7 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <include
@@ -21,30 +21,31 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_weight=".5"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
-                <Button
+                <ImageView
                     android:id="@+id/btn_load_image"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:text="@string/edit_provile_Act_update_image" />
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/edit_button"
+                    android:focusable="true"
+                    android:src="@android:drawable/ic_menu_edit" />
+            </RelativeLayout>
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imgView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/ic_launcher_round" />
-            </LinearLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-30dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/man" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -74,6 +75,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
+                        android:inputType="text"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -99,6 +101,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
+                        android:inputType="text"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -125,6 +128,7 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
+                        android:inputType="textEmailAddress"
                         android:textSize="16sp" />
                 </LinearLayout>
 

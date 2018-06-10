@@ -298,6 +298,7 @@
     <!-- users_layout-->
     <string name="users_layout_users_name">users_name</string>
     <string name="users_layout_users_status">Job</string>
+    <string name="edit_button">edit button</string>
     <!-- end users_layout -->
     <!-- end Activities  -->
 </resources>

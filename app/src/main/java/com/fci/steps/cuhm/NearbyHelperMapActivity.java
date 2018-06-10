@@ -24,14 +24,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
+import java.util.Objects;
 
- class NearbyHelperMapActivity extends FragmentActivity implements OnMapReadyCallback {
+public class NearbyHelperMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private static final String TAG = NearbyHelperMapActivity.class.getSimpleName();
     private HashMap<String, Marker> mMarkers = new HashMap<>();
     private GoogleMap mMap;
     FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
-    final String uId = current_user.getUid();
+    final String uId = Objects.requireNonNull(current_user).getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,14 +103,15 @@ import java.util.HashMap;
         });
 
         FirebaseUser current_user = FirebaseAuth.getInstance().getCurrentUser();
+        assert current_user != null;
         String uId = current_user.getUid();
         DatabaseReference cur_ref = FirebaseDatabase.getInstance().getReference().child("location").child(uId);
 
         cur_ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Double lat = Double.parseDouble(dataSnapshot.child("latitude").getValue().toString());
-                Double lng = Double.parseDouble(dataSnapshot.child("longitude").getValue().toString());
+                Double lat = Double.parseDouble(Objects.requireNonNull(dataSnapshot.child("latitude").getValue()).toString());
+                Double lng = Double.parseDouble(Objects.requireNonNull(dataSnapshot.child("longitude").getValue()).toString());
                 LatLng current_location;
                 current_location = new LatLng(lat, lng);
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(current_location));
@@ -130,6 +132,7 @@ import java.util.HashMap;
         // boundaries required to show them all on the map at once
         String key = dataSnapshot.getKey();
         HashMap<String, Object> value = (HashMap<String, Object>) dataSnapshot.getValue();
+        assert value != null;
         double lat = Double.parseDouble(value.get("latitude").toString());
         double lng = Double.parseDouble(value.get("longitude").toString());
         LatLng location = new LatLng(lat, lng);
