@@ -86,7 +86,7 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
             android:name=".NotificationDetailsActivity"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
